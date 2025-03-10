@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <section className="text-white-pure min-h-[100vh] pt-40 px-10 text-center">
+    <section className="text-white-pure min-h-[100vh] flex flex-col justify-center text-center">
       <h2 className="font-serif text-5xl text-yellow-light mb-4">
         League Of Legends Information
       </h2>
