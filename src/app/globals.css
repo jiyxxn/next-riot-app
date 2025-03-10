@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 :root {
-  --font-beaufort-serif: 'BeaufortforLOL', serif;
   --color-yellow-dark: #aa7645;
   --color-yellow-pure: #c59154;
   --color-yellow-light: #e0ac63;
   --color-white-dark: #999186;
   --color-white-pure: #ccc2b3;
   --color-white-light: #fff2e0;
+  --color-black: #010a13;
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -20,7 +20,8 @@
 } */
 
 body {
-  font-family: var(--font-beaufort-serif), serif;
+  font-family: var(--font-noto-sans), san-serif;
+  font-weight: 500;
   background: url('../public/bg.jpg') no-repeat 0 0 / cover;
 }
 
