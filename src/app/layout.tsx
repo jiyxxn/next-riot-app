@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import './globals.css';
 import { notoSans } from '@/styles/fonts/Noto-Sans';
+import Header from '@/components/Header';
 
 const Beaufort = localFont({
   src: [
@@ -33,7 +34,8 @@ export default function RootLayout({
     <html lang="ko">
       <body
         className={`${Beaufort.variable}  ${notoSans.variable} antialiased`}>
-        {children}
+        <Header />
+        <main>{children}</main>
       </body>
     </html>
   );
