@@ -3,21 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --font-beaufort-serif: 'BeaufortforLOL', serif;
+  --color-yellow-dark: #aa7645;
+  --color-yellow-pure: #c59154;
+  --color-yellow-light: #e0ac63;
+  --color-white-dark: #999186;
+  --color-white-pure: #ccc2b3;
+  --color-white-light: #fff2e0;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-beaufort-serif), serif;
+  background: url('../public/bg.jpg') no-repeat 0 0 / cover;
 }
 
 @layer utilities {
