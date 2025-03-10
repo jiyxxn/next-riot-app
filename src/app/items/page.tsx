@@ -3,7 +3,9 @@ import { Item } from '@/types/Items';
 import { fetchItemList } from '@/utils/serverApi';
 
 const ItemList = async () => {
-  const items: Record<string, Item> = await fetchItemList();
+  const items: Record<string, Item> | null = await fetchItemList();
+
+  if (!items) return <div>아이템 데이터를 불러오지 못했습니다.</div>;
 
   return (
     <section className="text-white-pure pt-40 pb-20 px-20 text-center">
