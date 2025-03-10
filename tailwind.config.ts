@@ -15,6 +15,11 @@ const config: Config = {
         'white-dark': 'var(--color-white-dark)',
         'white-pure': 'var(--color-white-pure)',
         'white-light': 'var(--color-white-light)',
+        black: 'var(--color-black)',
+      },
+      fontFamily: {
+        sans: 'var(--font-noto-sans)',
+        serif: 'var(--font-beaufort-serif)',
       },
     },
   },
