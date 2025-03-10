@@ -1,4 +1,4 @@
-import { ITEM_IMAGE_BASE_URL } from '@/constants';
+import { RIOT_IMAGE_BASE_URL } from '@/constants';
 import { Item } from '@/types/Items';
 import Image from 'next/image';
 import React from 'react';
@@ -14,7 +14,7 @@ const ItemCard = ({ item, id }: ItemCardProps) => {
       key={id}
       className="flex w-full gap-4 p-6 border-yellow-dark border-[1px] rounded-md">
       <Image
-        src={`${ITEM_IMAGE_BASE_URL}${item.image.full}`}
+        src={`${RIOT_IMAGE_BASE_URL}/item/${item.image.full}`}
         alt={item.name}
         width={90}
         height={90}
