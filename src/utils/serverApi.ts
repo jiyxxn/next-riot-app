@@ -1,10 +1,10 @@
-import { RIOT_API_BASE_URL } from '@/constants';
+import { BASE_URL } from '@/constants';
 import { Champion, ChampionDetail } from '@/types/Champion';
 import { Item } from '@/types/Items';
 
 export const fetchItemList = async (): Promise<Record<string, Item> | null> => {
   try {
-    const response = await fetch(`${RIOT_API_BASE_URL}/item.json`);
+    const response = await fetch(`${BASE_URL.RIOT_API}/item.json`);
 
     if (!response.ok) {
       throw new Error(`HTTP 오류: ${response.status}`);
@@ -23,7 +23,7 @@ export const fetchChampionList = async (): Promise<Record<
   Champion
 > | null> => {
   try {
-    const response = await fetch(`${RIOT_API_BASE_URL}/champion.json`, {
+    const response = await fetch(`${BASE_URL.RIOT_API}/champion.json`, {
       next: { revalidate: 86400 },
     });
 
@@ -43,7 +43,7 @@ export const fetchChampionDetail = async (
   id: string
 ): Promise<Record<string, ChampionDetail> | null> => {
   try {
-    const response = await fetch(`${RIOT_API_BASE_URL}/champion/${id}.json`, {
+    const response = await fetch(`${BASE_URL.RIOT_API}/champion/${id}.json`, {
       cache: 'no-store',
     });
 
@@ -57,4 +57,10 @@ export const fetchChampionDetail = async (
     console.error('챔피언 상세 fetch 에러', error);
     return null;
   }
+};
+
+export const getRotationChampionList = async (): Promise<Champion[]> => {
+  const response = await fetch('/api/rotation');
+  if (!response.ok) throw new Error('로테이션 API 호출 오류');
+  return response.json();
 };
