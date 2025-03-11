@@ -1,4 +1,6 @@
-export type Champion = {
+export type Champion = Pick<ChampionDetail, Key>;
+
+export type ChampionDetail = {
   id: string;
   key: string;
   name: string;
@@ -7,9 +9,6 @@ export type Champion = {
     full: string;
     sprite: string;
   };
-};
-
-export interface ChampionDetail extends Champion {
   lore: string;
   passive: {
     name: string;
@@ -28,4 +27,6 @@ export interface ChampionDetail extends Champion {
       };
     }
   ];
-}
+};
+
+type Key = 'id' | 'key' | 'name' | 'title' | 'image';
