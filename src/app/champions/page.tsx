@@ -1,8 +1,6 @@
-import { RIOT_IMAGE_BASE_URL } from '@/constants';
+import ChampionCard from '@/components/ChampionCard';
 import { Champion } from '@/types/Champion';
 import { fetchChampionList } from '@/utils/serverApi';
-import Image from 'next/image';
-import Link from 'next/link';
 
 const ChampionsList = async () => {
   const champions: Record<string, Champion> | null = await fetchChampionList();
@@ -15,19 +13,8 @@ const ChampionsList = async () => {
         Champions
       </h2>
       <ul className="grid grid-cols-[repeat(auto-fit,_minmax(90px,_1fr))] gap-4 items-center justify-start mt-20">
-        {Object.entries(champions).map(([id, champ]) => (
-          <li key={id}>
-            <Link href={`/champions/${id}`}>
-              <Image
-                src={`${RIOT_IMAGE_BASE_URL}/champion/${champ.image.full}`}
-                width={90}
-                height={90}
-                alt={champ.name}
-              />
-              {/* <span>{champ.name}</span>
-              <span>{champ.title}</span> */}
-            </Link>
-          </li>
+        {Object.entries(champions).map(([id, champion]) => (
+          <ChampionCard key={id} id={id} champion={champion} />
         ))}
       </ul>
     </section>
