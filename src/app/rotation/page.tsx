@@ -4,6 +4,8 @@ import ChampionCard from '@/components/ChampionCard';
 import { Champion } from '@/types/Champion';
 import { getRotationChampionList } from '@/utils/serverApi';
 import { useQuery } from '@tanstack/react-query';
+import { Suspense } from 'react';
+import Loading from '../loading';
 
 const RotationList = () => {
   const {
@@ -15,7 +17,7 @@ const RotationList = () => {
     queryFn: getRotationChampionList,
   });
 
-  if (isLoading) return <p> Loading ... </p>;
+  if (isLoading) return <Loading />;
   if (isError) return <p> 데이터를 불러오는 중 오류가 발생했습니다. </p>;
 
   return (
