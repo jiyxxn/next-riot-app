@@ -23,7 +23,7 @@ export default function Home() {
           </Link>
         </li>
         <li>
-          <Link href={'/rotaion'}>
+          <Link href={'/rotation'}>
             <Image
               src="https://img.uhdpaper.com/wallpaper/t1-2024-jayce-orianna-lee-sin-jinx-bard-skins-lol-splash-art-327@2@a-preview.jpg?dl"
               alt="금주 로테이션 확인"

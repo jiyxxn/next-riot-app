@@ -15,7 +15,7 @@ const Header = () => {
           <Link href={'/champions'}>Champions</Link>
         </li>
         <li className="hover:text-yellow-dark">
-          <Link href={'/rotaion'}>Rotation</Link>
+          <Link href={'/rotation'}>Rotation</Link>
         </li>
         <li className="hover:text-yellow-dark">
           <Link href={'/items'}>Items</Link>
