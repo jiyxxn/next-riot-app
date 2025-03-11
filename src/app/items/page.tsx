@@ -5,9 +5,7 @@ import { Suspense } from 'react';
 import Loading from '../loading';
 
 const ItemList = async () => {
-  const items: Record<string, Item> | null = await fetchItemList();
-
-  if (!items) return <div>아이템 데이터를 불러오지 못했습니다.</div>;
+  const items: Record<string, Item> = await fetchItemList();
 
   return (
     <section className="text-white-pure pt-40 pb-20 px-20 text-center">

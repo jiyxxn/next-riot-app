@@ -4,10 +4,8 @@ import { fetchChampionDetail } from '@/utils/serverApi';
 import Image from 'next/image';
 
 const ChampionDetailPage = async ({ params }: { params: { id: string } }) => {
-  const championData: Record<string, ChampionDetail> | null =
+  const championData: Record<string, ChampionDetail> =
     await fetchChampionDetail(params.id);
-
-  if (!championData) return <div>챔피언 데이터를 찾을 수 없습니다.</div>;
 
   const champion = championData[params.id];
 

@@ -5,9 +5,7 @@ import { Suspense } from 'react';
 import Loading from '../loading';
 
 const ChampionsList = async () => {
-  const champions: Record<string, Champion> | null = await fetchChampionList();
-
-  if (!champions) return <div>챔피언 데이터를 불러오지 못했습니다.</div>;
+  const champions: Record<string, Champion> = await fetchChampionList();
 
   return (
     <section className="text-white-pure pt-40 pb-20 px-20 ">
