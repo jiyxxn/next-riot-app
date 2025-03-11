@@ -1,7 +1,4 @@
-import {
-  CHAMPION_SPLASH_IMAGE_BASE_URL,
-  RIOT_IMAGE_BASE_URL,
-} from '@/constants';
+import { BASE_URL } from '@/constants';
 import { ChampionDetail } from '@/types/Champion';
 import { fetchChampionDetail } from '@/utils/serverApi';
 import Image from 'next/image';
@@ -21,7 +18,7 @@ const ChampionDetailPage = async ({ params }: { params: { id: string } }) => {
         style={{
           background: `
       linear-gradient(to right, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 50%),
-      url('${CHAMPION_SPLASH_IMAGE_BASE_URL}/${champion.id}_0.jpg') no-repeat center center / cover
+      url('${BASE_URL.CHAMPION_SPLASH_IMAGE}/${champion.id}_0.jpg') no-repeat center center / cover
     `,
         }}>
         <div className="relative z-10 text-white mix-blend-color-dodge">
@@ -43,7 +40,7 @@ const ChampionDetailPage = async ({ params }: { params: { id: string } }) => {
           <ul className="flex gap-4 mt-10">
             <li>
               <Image
-                src={`${RIOT_IMAGE_BASE_URL}/passive/${champion.passive.image.full}`}
+                src={`${BASE_URL.RIOT_IMAGE}/passive/${champion.passive.image.full}`}
                 width={60}
                 height={60}
                 alt={champion.passive.name}
@@ -53,7 +50,7 @@ const ChampionDetailPage = async ({ params }: { params: { id: string } }) => {
             {champion.spells.map((spell) => (
               <li key={spell.id}>
                 <Image
-                  src={`${RIOT_IMAGE_BASE_URL}/spell/${spell.image.full}`}
+                  src={`${BASE_URL.RIOT_IMAGE}/spell/${spell.image.full}`}
                   width={60}
                   height={60}
                   alt={spell.name}
