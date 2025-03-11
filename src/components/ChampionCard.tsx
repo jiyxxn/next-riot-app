@@ -11,11 +11,13 @@ interface ChampionCardProps {
 const ChampionCard = ({ id, champion }: ChampionCardProps) => {
   return (
     <li key={id}>
-      <Link href={`/champions/${id}`}>
+      <Link
+        href={`/champions/${id}`}
+        className="block relative lg:w-[90px] lg:h-[90px] w-16 h-16">
         <Image
           src={`${BASE_URL.RIOT_IMAGE}/champion/${champion.image.full}`}
-          width={90}
-          height={90}
+          fill
+          sizes="20vw"
           alt={champion.name}
         />
       </Link>
