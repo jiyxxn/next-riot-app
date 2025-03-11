@@ -4,6 +4,8 @@ import { Item } from '@/types/Items';
 
 export const fetchItemList = async (): Promise<Record<string, Item> | null> => {
   try {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+
     const response = await fetch(`${BASE_URL.RIOT_API}/item.json`);
 
     if (!response.ok) {
@@ -23,6 +25,8 @@ export const fetchChampionList = async (): Promise<Record<
   Champion
 > | null> => {
   try {
+    // await new Promise((resolve) => setTimeout(resolve, 3000));
+
     const response = await fetch(`${BASE_URL.RIOT_API}/champion.json`, {
       next: { revalidate: 86400 },
     });
