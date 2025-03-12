@@ -47,9 +47,19 @@ const ChampionDetailPage = async ({ params }: { params: { id: string } }) => {
                 alt={champion.passive.name}
                 className="rounded-sm"
               />
-              <p className="group-hover:block hidden absolute left-0 top-full mt-2 w-full text-yellow-pure text-sm bg-zinc-950 bg-opacity-80 p-4 rounded-md">
-                {removeHtmlTags(champion.passive.description)}
-              </p>
+              <div className="group-hover:block hidden absolute left-0 top-full mt-2 w-full text-yellow-pure text-sm bg-zinc-950 bg-opacity-80 p-4 rounded-md">
+                <div className="flex items-center gap-2 mb-2">
+                  <Image
+                    src={`${BASE_URL.RIOT_IMAGE}/passive/${champion.passive.image.full}`}
+                    width={30}
+                    height={30}
+                    alt={champion.passive.name}
+                    className="rounded-sm"
+                  />
+                  <span className="font-bold">{champion.passive.name}</span>
+                </div>
+                <p>{removeHtmlTags(champion.passive.description)}</p>
+              </div>
             </li>
             {champion.spells.map((spell) => (
               <li key={spell.id} className="group cursor-pointer">
@@ -60,9 +70,20 @@ const ChampionDetailPage = async ({ params }: { params: { id: string } }) => {
                   alt={spell.name}
                   className="rounded-sm"
                 />
-                <p className="group-hover:block hidden absolute left-0 top-full mt-2 w-full text-yellow-pure text-sm bg-zinc-950 bg-opacity-80 p-4 rounded-md">
-                  {removeHtmlTags(spell.description)}
-                </p>
+
+                <div className="group-hover:block hidden absolute left-0 top-full mt-2 w-full text-yellow-pure text-sm bg-zinc-950 bg-opacity-80 p-4 rounded-md">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Image
+                      src={`${BASE_URL.RIOT_IMAGE}/spell/${spell.image.full}`}
+                      width={30}
+                      height={30}
+                      alt={spell.name}
+                      className="rounded-sm"
+                    />
+                    <span className="font-bold">{spell.name}</span>
+                  </div>
+                  <p>{removeHtmlTags(spell.description)}</p>
+                </div>
               </li>
             ))}
           </ul>
