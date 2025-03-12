@@ -24,7 +24,7 @@ const RotationList = () => {
       <h2 className="mb-4 font-serif text-4xl font-bold text-center lg:text-6xl text-yellow-light mix-blend-hard-light">
         Rotation Champions
       </h2>
-      <ul className="grid grid-cols-[repeat(auto-fit,_minmax(60px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(90px,_1fr))] gap-2 lg:gap-4 items-center justify-start mt-14 lg:mt-20">
+      <ul className="lg:mx-auto lg:w-2/3 grid grid-cols-[repeat(auto-fit,_minmax(60px,_1fr))] lg:grid-cols-[repeat(auto-fit,_minmax(90px,_1fr))] gap-2 lg:gap-4 items-center justify-start mt-14 lg:mt-20">
         {rotationChampions?.map((champion) => (
           <ChampionCard
             key={champion.key}

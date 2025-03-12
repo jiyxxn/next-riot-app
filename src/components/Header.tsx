@@ -8,7 +8,7 @@ const Header = () => {
       <h1>
         <Link
           href={'/'}
-          className="block relative w-[100px] h-[34px] lg:w-[140px] lg:h-[60px]">
+          className="block relative w-[110px] h-[34px] lg:w-[150px] lg:h-[50px]">
           <Image src={'/logo.png'} alt="DORAN.GG" fill sizes="20vw" />
         </Link>
       </h1>

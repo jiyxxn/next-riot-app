@@ -8,9 +8,11 @@ const ItemList = async () => {
   const items: Record<string, Item> = await fetchItemList();
 
   return (
-    <section className="text-white-pure pt-40 pb-20 px-20 text-center">
-      <h2 className="font-serif text-5xl text-yellow-light mb-4">Items</h2>
-      <ul className="mt-20 grid grid-cols-4 items-center justify-center gap-12">
+    <section className="px-10 pb-20 pt-28 lg:px-20 lg:pt-40 text-white-pure">
+      <h2 className="mb-4 font-serif text-4xl font-bold text-center lg:text-6xl text-yellow-light">
+        Items
+      </h2>
+      <ul className="mt-14 lg:mt-20 grid grid-cols-[repeat(auto-fit,300px)]  items-center justify-center gap-8 lg:gap-12">
         <Suspense fallback={<Loading />}>
           {Object.entries(items).map(
             ([id, item]) =>
