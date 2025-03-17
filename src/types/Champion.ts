@@ -1,4 +1,4 @@
-export type Champion = Pick<ChampionDetail, Key>;
+export type Champion = Pick<ChampionDetail, KeyForChampList>;
 
 export type ChampionDetail = {
   id: string;
@@ -29,4 +29,4 @@ export type ChampionDetail = {
   ];
 };
 
-type Key = 'id' | 'key' | 'name' | 'title' | 'image';
+type KeyForChampList = 'id' | 'key' | 'name' | 'title' | 'image';
