@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-yellow-dark: #aa7645;
+  --color-yellow-pure: #c59154;
+  --color-yellow-light: #e0ac63;
+  --color-white-dark: #999186;
+  --color-white-pure: #ccc2b3;
+  --color-white-light: #fff2e0;
+  --color-black: #010a13;
+}
+
+body {
+  font-family: var(--font-noto-sans), san-serif;
+  font-weight: 500;
+  background: url('/bg.jpg') no-repeat 0 0 / cover;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
