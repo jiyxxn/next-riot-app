@@ -18,7 +18,7 @@ export default function Home() {
               sizes="70vw"
               className="object-cover lg:transition-all lg:duration-300 lg:grayscale lg:group-hover:grayscale-0"
             />
-            <span className="absolute block w-full py-4 text-xl font-bold tracking-tight text-center -translate-x-1/2 -translate-y-1/2 bg-gray-800 lg:transition-opacity lg:duration-300 bg-opacity-30 lg:bg-none top-1/2 lg:top-auto lg:text-3xl lg:bottom-20 left-1/2 lg:opacity-0 group-hover:opacity-100">
+            <span className="absolute block w-full py-4 text-xl font-bold tracking-tight text-center -translate-x-1/2 -translate-y-1/2 bg-gray-800 lg:transition-opacity lg:duration-300 bg-opacity-30 lg:bg-transparent top-1/2 lg:top-auto lg:text-3xl lg:bottom-20 left-1/2 lg:opacity-0 group-hover:opacity-100">
               챔피언 정보 보기
             </span>
           </Link>
@@ -33,7 +33,7 @@ export default function Home() {
               sizes="70vw"
               className="object-cover lg:transition-all lg:duration-300 lg:grayscale lg:group-hover:grayscale-0"
             />
-            <span className="absolute block w-full py-4 text-xl font-bold tracking-tight text-center -translate-x-1/2 -translate-y-1/2 lg:bg-none bg-gray-800 lg:transition-opacity lg:duration-300 bg-opacity-30  top-1/2 lg:top-auto lg:text-3xl lg:bottom-20 left-1/2 lg:opacity-0 group-hover:opacity-100">
+            <span className="absolute block w-full py-4 text-xl font-bold tracking-tight text-center -translate-x-1/2 -translate-y-1/2 lg:bg-transparent bg-gray-800 lg:transition-opacity lg:duration-300 bg-opacity-30  top-1/2 lg:top-auto lg:text-3xl lg:bottom-20 left-1/2 lg:opacity-0 group-hover:opacity-100">
               금주 로테이션 확인
             </span>
           </Link>
@@ -47,7 +47,7 @@ export default function Home() {
               sizes="70vw"
               className="object-cover lg:transition-all lg:duration-300 lg:grayscale lg:group-hover:grayscale-0"
             />
-            <span className="absolute block w-full py-4 text-xl font-bold tracking-tight text-center -translate-x-1/2 -translate-y-1/2 bg-gray-800 lg:transition-opacity lg:duration-300 bg-opacity-30 lg:bg-none top-1/2 lg:top-auto lg:text-3xl lg:bottom-20 left-1/2 lg:opacity-0 group-hover:opacity-100">
+            <span className="absolute block w-full py-4 text-xl font-bold tracking-tight text-center -translate-x-1/2 -translate-y-1/2 bg-gray-800 lg:transition-opacity lg:duration-300 bg-opacity-30 lg:bg-transparent top-1/2 lg:top-auto lg:text-3xl lg:bottom-20 left-1/2 lg:opacity-0 group-hover:opacity-100">
               아이템 정보 보기
             </span>
           </Link>
