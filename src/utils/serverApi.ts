@@ -1,4 +1,4 @@
-import { BASE_URL } from '@/constants';
+import { BASE_URL, EXPIRE_ONE_DAY } from '@/constants';
 import { Champion, ChampionDetail } from '@/types/Champion';
 import { Item } from '@/types/Items';
 
@@ -15,7 +15,7 @@ export const fetchChampionList = async (): Promise<
   Record<string, Champion>
 > => {
   const response = await fetch(`${BASE_URL.RIOT_API}/champion.json`, {
-    next: { revalidate: 86400 },
+    next: { revalidate: EXPIRE_ONE_DAY },
   });
 
   if (!response.ok) throw new Error(`HTTP 오류: ${response.status}`);

@@ -13,3 +13,5 @@ export const ERROR_MESSAGE = {
   ERROR_500: '서버에서 문제가 발생했습니다. 잠시 후 다시 시도해주세요.',
   DEFAULT: '알 수 없는 오류가 발생했습니다. 다시 시도해주세요.',
 } as const;
+
+export const EXPIRE_ONE_DAY = 86400;
