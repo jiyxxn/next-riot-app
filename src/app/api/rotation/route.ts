@@ -1,7 +1,22 @@
 import { BASE_URL } from '@/constants';
 import { Champion } from '@/types/Champion';
 
+/**
+ * 현재 로테이션 챔피언 데이터를 가져와 반환하는 API 엔드포인트
+ *
+ * 이 함수는 두 가지 Riot API 엔드포인트를 호출합니다.
+ * - `BASE_URL.ROTATION_CHAMPIONS`: 로테이션 챔피언의 ID 목록을 반환
+ * - `${BASE_URL.RIOT_API}/champion.json`: 전체 챔피언 정보를 반환
+ *
+ * 두 데이터셋을 결합하여 로테이션 챔피언의 상세 정보를 필터링한 후,
+ * JSON 형식으로 응답(Response 객체)을 반환합니다.
+ *
+ * @returns {Promise<Response>} 로테이션 챔피언의 상세 정보를 포함하는 Response 객체
+ *
+ * @throws {Response} 두 API 호출 중 하나라도 실패할 경우, 상태 코드 500과 오류 메시지를 포함한 Response 객체를 반환합니다.
+ */
 export async function GET() {
+  // 로테이션 챔피언 ID 목록을 가져오기 위해 Riot API 엔드포인트 호출
   const rotationResponse = await fetch(BASE_URL.ROTATION_CHAMPIONS, {
     headers: {
       'User-Agent':
@@ -13,10 +28,12 @@ export async function GET() {
     },
   });
 
+  // 전체 챔피언 데이터를 가져오기 위해 Riot API 엔드포인트 호출
   const championListResponse = await fetch(
     `${BASE_URL.RIOT_API}/champion.json`
   );
 
+  // 두 API 호출 중 하나라도 실패할 경우, 에러 응답(Response) 반환
   if (!rotationResponse.ok || !championListResponse.ok) {
     return new Response(JSON.stringify({ error: '로테이션 fetching 오류' }), {
       status: 500,
