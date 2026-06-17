@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { BASE_URL } from '@/constants';
 import { Champion } from '@/types/Champion';
 
